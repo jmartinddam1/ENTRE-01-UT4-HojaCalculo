@@ -12,7 +12,7 @@ public class TestHojaCalculo
      * Constructor  
      */
     public TestHojaCalculo()    {
-
+        
     }
 
     /**
@@ -23,9 +23,7 @@ public class TestHojaCalculo
      * de fila  
      */
     public void test1() {
-           
-
-        
+          //System.out.println();
 
     }
 
