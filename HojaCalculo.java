@@ -183,13 +183,19 @@ public class HojaCalculo
      */
     public String toString() {
         String str = "";
-        str += ("%8s" + this.nombre + "\n");
-        str += String.format("%15s %15s %15s %15s", "FECHA", "INGRESOS", "GASTOS", "BENEFICIO");
-        fila1.toString();
-        fila2.toString();
-        fila3.toString();
-        str += ("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        str += String.format("%23s %15.2f€ %15.2f€ % 15.2f€ ", "", getTotalIngresos(), getTotalGastos(), getBeneficio());
+        str += String.format("%8s\n", this.nombre);
+        str += String.format("%24s %16s %16s %16s\n", "FECHA", "INGRESOS", "GASTOS", "BENEFICIO");
+        if(getNumeroFilas() == 1){
+            str += fila1.toString() + "\n";
+        }
+        if(getNumeroFilas() == 2){
+            str += fila1.toString() + "\n" + fila2.toString() + "\n";
+        }
+        if(getNumeroFilas() == 3){
+            str += fila1.toString() + "\n" + fila2.toString() + "\n" + fila3.toString() + "\n";
+        }
+        str += ("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+        str += String.format("%24s %15.2f€ %15.2f€ % 15.2f€ \n", "", getTotalIngresos(), getTotalGastos(), getBeneficio());
         return str; 
 
     }
